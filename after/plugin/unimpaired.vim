@@ -6,3 +6,5 @@ nmap <Down> ]e
 " Multiple lines:
 vmap <Up> [egv
 vmap <Down> ]egv
+vmap K [egv
+vmap J ]egv
