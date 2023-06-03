@@ -62,3 +62,6 @@ vim.keymap.set("n", "<M-Down>", "<Cmd>lprev<CR>zz")
 
 -- Make current file executable
 vim.keymap.set("n", "<Leader>x", "<Cmd>!chmod +x %<CR>")
+
+-- Paste markdown link around selected text
+vim.keymap.set("x", "<leader>l", "<Esc>`>a](<C-r>*)<C-o>`<[<Esc>")
