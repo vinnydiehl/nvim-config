@@ -68,11 +68,10 @@ return require("packer").startup(function(use)
   use "fabi1cazenave/suckless.vim"
   use "folke/trouble.nvim"
   use "haya14busa/is.vim"
-  use "kana/vim-textobj-user"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
   use "lukas-reineke/indent-blankline.nvim"
   use "mbbill/undotree"
-  use "nelstrom/vim-textobj-rubyblock"
+  use { "nelstrom/vim-textobj-rubyblock", requires = "kana/vim-textobj-user" }
   use { "numToStr/Comment.nvim", config = function() require("Comment").setup() end }
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
