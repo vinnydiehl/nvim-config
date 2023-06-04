@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
   }
 
   -- Folding
+
   use {
     "kevinhwang91/nvim-ufo",
     requires = {
@@ -58,6 +59,13 @@ return require("packer").startup(function(use)
     "anuvyklack/fold-preview.nvim",
     requires = "anuvyklack/keymap-amend.nvim",
     config = function() require("fold-preview").setup() end
+  }
+
+  -- Status Line
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    config = function() require("lualine").setup {} end
   }
 
   -- Disable Netrw to prevent race condition with nvim-tree
