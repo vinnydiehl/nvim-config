@@ -75,8 +75,8 @@ return require("packer").startup(function(use)
   use { "numToStr/Comment.nvim", config = function() require("Comment").setup() end }
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
-  use { "nvim-treesitter/nvim-treesitter",  run = ":TSUpdate" }
-  use "nvim-treesitter/playground"
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use { "nvim-treesitter/playground"}
   use "RRethy/nvim-treesitter-endwise"
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"

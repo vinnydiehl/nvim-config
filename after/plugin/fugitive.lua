@@ -7,7 +7,6 @@ local function branch_name()
   end
 end
 
-
 vim.api.nvim_create_autocmd({"FileType", "BufEnter", "FocusGained"}, {
   callback = function()
     vim.b.branch_name = branch_name()
