@@ -12,6 +12,6 @@ vim.keymap.set("n", "<leader>ps", function()
   builtin.grep_string { search = vim.fn.input "Grep > " }
 end)
 
-vim.keymap.set("n", "<leader>pl", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>plg", builtin.live_grep, {})
 vim.keymap.set("v", "<leader>pl", live_grep_args_shortcuts.grep_visual_selection)
-vim.keymap.set("n", "<leader>pw", live_grep_args_shortcuts.grep_word_under_cursor)
+vim.keymap.set("n", "<leader>plw", live_grep_args_shortcuts.grep_word_under_cursor)
