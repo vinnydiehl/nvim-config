@@ -84,5 +84,6 @@ return require("packer").startup(function(use)
   use "tpope/vim-unimpaired"
   use "vim-scripts/argtextobj.vim"
   use { "Wansmer/treesj", config = function() require("treesj").setup() end }
+  use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   use "windwp/nvim-autopairs"
 end)
