@@ -16,7 +16,6 @@ lsp.ensure_installed({
   "html",          -- HTML
   "jsonls",        -- JSON
   "lua_ls",        -- Lua
-  "pylsp",         -- Python
   "rust_analyzer", -- Rust
   "solargraph",    -- Ruby
   "tsserver",      -- JavaScript/TypeScript
