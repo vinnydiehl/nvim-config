@@ -1,8 +1,11 @@
+-- Must be set up before lspconfig
+require("neodev").setup()
+
 local lsp = require("lsp-zero")
 local lspconfig = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp.preset("recommended")
 
@@ -66,9 +69,6 @@ lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       runtime = { version = "LuaJIT" },
-      -- Get the language server to recognize the `vim` global for editing config files
-      -- This enables it everywhere but whatever
-      diagnostics = { globals = { "vim" } },
       -- Make the server aware of Neovim runtime files
       workspace = { library = vim.api.nvim_get_runtime_file("", true) },
       telemetry = { enable = false }

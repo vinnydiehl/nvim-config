@@ -68,12 +68,17 @@ return require("packer").startup(function(use)
     config = function() require("lualine").setup {} end
   }
 
+  -- Debugger
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } }
+
   -- Disable Netrw to prevent race condition with nvim-tree
   vim.g.loaded_netrw = 1
   vim.g.loaded_netrwPlugin = 1
 
   use "chrisbra/unicode.vim"
   use "fabi1cazenave/suckless.vim"
+  use "folke/neodev.nvim"
   use "folke/trouble.nvim"
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
