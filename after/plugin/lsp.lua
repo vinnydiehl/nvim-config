@@ -29,7 +29,8 @@ lsp.ensure_installed({
 local cmp = require "cmp"
 lsp.setup_nvim_cmp({ mapping = lsp.defaults.cmp_mappings({
   ["<C-e>"] = cmp.mapping.abort(),
-  ["<Enter>"] = cmp.mapping.confirm({ select = true })
+  ["<Enter>"] = cmp.mapping.confirm({ select = false }),
+  ["<C-Space>"] = cmp.mapping.confirm({ select = true })
 }) })
 
 lsp.set_preferences({
