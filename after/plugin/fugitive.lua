@@ -15,6 +15,9 @@ vim.api.nvim_create_autocmd({"FileType", "BufEnter", "FocusGained"}, {
 
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
+vim.keymap.set("n", "<leader>gi", "<cmd>Git init<CR>")
+vim.keymap.set("n", "<leader>gib", "<cmd>Git init -b ")
+
 vim.keymap.set("n", "<leader>gS", "<cmd>Git stash<CR>")
 vim.keymap.set("n", "<leader>gSp", "<cmd>Git stash pop<CR>")
 
