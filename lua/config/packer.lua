@@ -68,6 +68,16 @@ return require("packer").startup(function(use)
     config = function() require("lualine").setup {} end
   }
 
+  -- Cheat sheet
+  use {
+    "sudormrfbin/cheatsheet.nvim",
+    requires = {
+      { "nvim-telescope/telescope.nvim" },
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+    }
+  }
+
   -- Debugger
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } }
@@ -80,6 +90,7 @@ return require("packer").startup(function(use)
   use "fabi1cazenave/suckless.vim"
   use "folke/neodev.nvim"
   use "folke/trouble.nvim"
+  use "folke/which-key.nvim"
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
   use "lukas-reineke/indent-blankline.nvim"
