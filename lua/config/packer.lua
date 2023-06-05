@@ -90,6 +90,7 @@ return require("packer").startup(function(use)
   use "nvim-tree/nvim-web-devicons"
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use { "nvim-treesitter/playground"}
+  use "rmagatti/goto-preview"
   use "RRethy/nvim-treesitter-endwise"
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"
