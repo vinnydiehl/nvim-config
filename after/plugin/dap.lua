@@ -1,3 +1,5 @@
+-- Debugger interface
+
 local dap = require "dap"
 local dapui = require "dapui"
 
@@ -24,37 +26,31 @@ dap.configurations.cpp = {
          ignoreFailures = false
       }
     }
-  },
-  {
-    name = "Attach to gdbserver :1234",
-    type = "cppdbg",
-    request = "launch",
-    MIMode = "gdb",
-    miDebuggerServerAddress = "localhost:1234",
-    miDebuggerPath = "/usr/bin/gdb",
-    cwd = "${workspaceFolder}",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
-    setupCommands = {
-      {
-         text = "-enable-pretty-printing",
-         description =  "enable pretty printing",
-         ignoreFailures = false
-      }
-    }
   }
 }
 
-require("dapui").setup()
+vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "CursorLine", numhl = "Normal" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "ﳁ", texthl = "Function", linehl = "CursorLine", numhl = "Normal" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "Error", linehl = "CursorLine", numhl = "Normal" })
+vim.fn.sign_define("DapLogPoint", { text = "", texthl = "Number", linehl = "CursorLine", numhl = "Normal" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "SpecialComment", linehl = "CursorLine", numhl = "Normal" })
+
+dapui.setup()
 require("nvim-dap-virtual-text").setup()
 
+-- UI
 vim.keymap.set("n", "<leader>dd", function() dapui.toggle() end)
 vim.keymap.set("n", "<leader>de", function() dapui.eval() end)
 vim.keymap.set("v", "<leader>de", function() dapui.eval() end)
 
+-- Breakpoints
 vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end)
+vim.keymap.set("n", "<leader><leader>db", function() dap.clear_breakpoints() end)
+
+-- Controls
 vim.keymap.set("n", "<leader>dc", function() dap.continue() end)
+vim.keymap.set("n", "<leader>d2c", function() dap.run_to_cursor() end)
 vim.keymap.set("n", "<leader>dn", function() dap.step_over() end)
 vim.keymap.set("n", "<leader>dsi", function() dap.step_into() end)
 vim.keymap.set("n", "<leader>dso", function() dap.step_out() end)
+vim.keymap.set("n", "<leader>dq", function() dap.close() end)
