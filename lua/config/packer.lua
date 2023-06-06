@@ -78,6 +78,16 @@ return require("packer").startup(function(use)
     }
   }
 
+  -- Fancy f/t movements
+  use {
+    "ggandor/flit.nvim",
+    requires = {
+      "ggandor/leap.nvim",
+      "tpope/vim-repeat"
+    },
+    config = function() require("flit").setup() end
+  }
+
   -- Debugger
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } }
@@ -96,7 +106,6 @@ return require("packer").startup(function(use)
   use "folke/neodev.nvim"
   use "folke/trouble.nvim"
   use "folke/which-key.nvim"
-  use "ggandor/leap.nvim"
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
   use "lukas-reineke/indent-blankline.nvim"
@@ -111,7 +120,6 @@ return require("packer").startup(function(use)
   use "RRethy/nvim-treesitter-endwise"
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"
-  use "tpope/vim-repeat"
   use "tpope/vim-unimpaired"
   use "vim-scripts/argtextobj.vim"
   use { "Wansmer/treesj", config = function() require("treesj").setup() end }
