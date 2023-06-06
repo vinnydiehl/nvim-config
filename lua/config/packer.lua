@@ -78,14 +78,19 @@ return require("packer").startup(function(use)
     }
   }
 
-  -- Fancy f/t movements
+  -- Leap
+
   use {
     "ggandor/flit.nvim",
     requires = {
       "ggandor/leap.nvim",
       "tpope/vim-repeat"
-    },
-    config = function() require("flit").setup() end
+    }
+  }
+
+  use {
+    "ggandor/leap-spooky.nvim",
+    requires = "ggandor/leap.nvim"
   }
 
   -- Debugger
