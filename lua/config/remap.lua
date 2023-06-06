@@ -35,6 +35,9 @@ vim.keymap.set("x", "<Leader>px", '"_dP')
 -- System clipboard copy/pasting
 vim.keymap.set("v", "<Leader>yy", '"+y')
 vim.keymap.set({ "n", "v" }, "<Leader>pp", '"+p')
+-- Primary selection
+vim.keymap.set("v", "<Leader>y1", '"*y')
+vim.keymap.set({ "n", "v" }, "<Leader>p1", '"*p')
 -- Whole file
 vim.keymap.set("n", "<Leader>ya", "mxggVG\"+y'x")
 vim.keymap.set("n", "<Leader>pa", 'ggVG"+p')
