@@ -1,3 +1,48 @@
+require("gitsigns").setup {
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map("n", "]h", function()
+      if vim.wo.diff then return "]h" end
+      vim.schedule(function() gs.next_hunk() end)
+      return "<Ignore>"
+    end, {expr=true})
+
+    map("n", "[h", function()
+      if vim.wo.diff then return "[h" end
+      vim.schedule(function() gs.prev_hunk() end)
+      return "<Ignore>"
+    end, {expr=true})
+
+    -- Actions
+    map("n", "<leader>hs", gs.stage_hunk)
+    map("n", "<leader>hu", gs.reset_hunk)
+    map("n", "<leader>hS", gs.stage_buffer)
+    map("n", "<leader>hU", gs.reset_buffer)
+    map("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+    map("v", "<leader>hu", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+    map("n", "<leader>hp", gs.preview_hunk_inline)
+    map("n", "<leader>hP", gs.preview_hunk)
+    map("n", "<leader>hb", function() gs.blame_line { full = true } end)
+    map("n", "<leader>tb", gs.toggle_current_line_blame)
+    map("n", "<leader>hd", "<cmd>Gdiff<CR>")
+    map("n", "<leader>hD", function() gs.diffthis("~") end)
+    map("n", "<leader>td", gs.toggle_deleted)
+
+    -- Text object
+    map({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+  end
+}
+
+-- Fugitive
+
 local function branch_name()
   local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
   if branch ~= "" then

@@ -108,6 +108,7 @@ return require("packer").startup(function(use)
   use "folke/which-key.nvim"
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
+  use "lewis6991/gitsigns.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "mbbill/undotree"
   use { "nelstrom/vim-textobj-rubyblock", requires = "kana/vim-textobj-user" }
