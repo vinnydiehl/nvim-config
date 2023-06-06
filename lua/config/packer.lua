@@ -96,6 +96,7 @@ return require("packer").startup(function(use)
   use "folke/neodev.nvim"
   use "folke/trouble.nvim"
   use "folke/which-key.nvim"
+  use "ggandor/leap.nvim"
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
   use "lukas-reineke/indent-blankline.nvim"
