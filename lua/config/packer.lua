@@ -86,6 +86,11 @@ return require("packer").startup(function(use)
   vim.g.loaded_netrw = 1
   vim.g.loaded_netrwPlugin = 1
 
+  -- TODO: This is a fork that updates the NERD font Material Design icons to their new
+  --       character codes! Keep an eye on this PR and update this plugin to the upstream
+  --       repo when it gets merged: https://github.com/simrat39/symbols-outline.nvim/pull/225
+  use "anstadnik/symbols-outline.nvim"
+
   use "chrisbra/unicode.vim"
   use "fabi1cazenave/suckless.vim"
   use "folke/neodev.nvim"
