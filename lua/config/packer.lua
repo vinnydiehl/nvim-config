@@ -35,6 +35,19 @@ return require("packer").startup(function(use)
     }
   }
 
+  -- Neotest
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+
+      -- Handlers
+      "olimorris/neotest-rspec"
+    }
+  }
+
   -- Snippets
   use {
     "L3MON4D3/LuaSnip",
