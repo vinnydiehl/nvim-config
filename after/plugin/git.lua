@@ -70,6 +70,7 @@ vim.keymap.set("n", "<leader>gco", "<cmd>Git branch<CR>")
 vim.keymap.set("n", "<leader>gb", ":Git checkout -b ")
 
 vim.keymap.set("n", "<leader>ga", "<cmd>Git add .<CR>")
+vim.keymap.set("n", "<leader>gcc", "<cmd>Git commit<CR>")
 vim.keymap.set("n", "<leader>gca", function()
   vim.cmd("Git add .")
   vim.cmd("Git commit")
