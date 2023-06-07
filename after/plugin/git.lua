@@ -87,3 +87,4 @@ vim.keymap.set("n", "<leader>gpro", "<cmd>Git pull --rebase origin " .. branch_n
 vim.keymap.set("n", "<leader>gpru", "<cmd>Git pull --rebase upstream " .. branch_name() .. "<CR>")
 
 vim.keymap.set("n", "<leader>gl", "<cmd>Git log --graph --decorate --pretty=oneline --abbrev-commit<CR>")
+vim.keymap.set("n", "<leader>gL", "<cmd>Git log<CR>")
