@@ -106,6 +106,13 @@ return require("packer").startup(function(use)
     requires = "ggandor/leap.nvim"
   }
 
+  -- tree-sitter text objects
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
+
   -- Debugger
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } }
@@ -129,7 +136,6 @@ return require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "mbbill/undotree"
-  use { "nelstrom/vim-textobj-rubyblock", requires = "kana/vim-textobj-user" }
   use { "numToStr/Comment.nvim", config = function() require("Comment").setup() end }
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
@@ -140,7 +146,6 @@ return require("packer").startup(function(use)
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"
   use "tpope/vim-unimpaired"
-  use "vim-scripts/argtextobj.vim"
   use { "Wansmer/treesj", config = function() require("treesj").setup() end }
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   use "windwp/nvim-autopairs"

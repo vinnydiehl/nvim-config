@@ -3,7 +3,7 @@ require("flit").setup()
 require("leap-spooky").setup {
   affixes = {
     magnetic = { window = "m", cross_window = "M" },
-    remote = { window = "g", cross_window = "G" }
+    remote = { window = "r", cross_window = "R" }
   },
 }
 
