@@ -79,9 +79,9 @@ vim.keymap.set("n", "<leader>gca", function()
 end)
 
 vim.keymap.set("n", "<leader>gpo", "<cmd>Git push origin " .. branch_name() .. "<CR>")
-vim.keymap.set("n", "<leader>gpof", "<cmd>Git push -f origin " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gp!o", "<cmd>Git push -f origin " .. branch_name() .. "<CR>")
 vim.keymap.set("n", "<leader>gpu", "<cmd>Git push upstream " .. branch_name() .. "<CR>")
-vim.keymap.set("n", "<leader>gpuf", "<cmd>Git push -f upstream " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gp!u", "<cmd>Git push -f upstream " .. branch_name() .. "<CR>")
 
 vim.keymap.set("n", "<leader>gpro", "<cmd>Git pull --rebase origin " .. branch_name() .. "<CR>")
 vim.keymap.set("n", "<leader>gpru", "<cmd>Git pull --rebase upstream " .. branch_name() .. "<CR>")
