@@ -5,33 +5,36 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Colors
-  use {
-    "phha/zenburn.nvim",
-    config = function() require("zenburn").setup() end
-  }
+  use { "phha/zenburn.nvim", config = function() require("zenburn").setup() end }
 
   -- Telescope - Fuzzy finder
+
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.1",
     requires = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope-live-grep-args.nvim" }
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim"
     }
   }
 
   use {
     "nvim-telescope/telescope-frecency.nvim",
-    requires = {"kkharji/sqlite.lua"}
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "kkharji/sqlite.lua"
+    }
   }
 
   use {
     "pwntester/octo.nvim",
     requires = {
-      "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons"
     }
   }
+
+  use { "nvim-telescope/telescope-project.nvim", requires = "nvim-telescope/telescope.nvim" }
 
   -- LSP configuration
   use {
