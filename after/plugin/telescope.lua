@@ -4,6 +4,9 @@ local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
 ts.setup {
   extensions = {
+    heading = {
+      treesitter = true
+    },
     repo = {
       list = {
         search_dirs = {
@@ -18,6 +21,7 @@ ts.setup {
 
 ts.load_extension("frecency")
 ts.load_extension("harpoon")
+ts.load_extension("heading")
 ts.load_extension("live_grep_args")
 ts.load_extension("octo")
 ts.load_extension("repo")
@@ -36,3 +40,5 @@ end)
 vim.keymap.set("n", "<leader>plg", builtin.live_grep, {})
 vim.keymap.set("v", "<leader>pl", live_grep_args_shortcuts.grep_visual_selection)
 vim.keymap.set("n", "<leader>plw", live_grep_args_shortcuts.grep_word_under_cursor)
+
+vim.keymap.set("n", "<leader>Th", ":Telescope heading<CR>")

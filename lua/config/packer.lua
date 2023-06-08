@@ -42,6 +42,14 @@ return require("packer").startup(function(use)
     }
   }
 
+  use {
+    "crispgm/telescope-heading.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    }
+  }
+
   -- LSP configuration
   use {
     "VonHeikemen/lsp-zero.nvim",
