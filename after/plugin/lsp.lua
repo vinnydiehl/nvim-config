@@ -63,6 +63,7 @@ end)
 
 lsp.setup()
 goto_preview.setup {}
+require("fidget").setup {}
 
 vim.diagnostic.config({
   virtual_text = true
@@ -74,15 +75,17 @@ lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       runtime = { version = "LuaJIT" },
-      -- Make the server aware of Neovim runtime files
-      workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
       telemetry = { enable = false }
     }
   }
 }
 
 lspconfig.emmet_ls.setup({
-  -- on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "eruby", "html" },
   init_options = {

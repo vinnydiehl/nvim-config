@@ -25,13 +25,16 @@ return require("packer").startup(function(use)
     branch = "v2.x",
     requires = {
       -- LSP Support
-      { "neovim/nvim-lspconfig" },
+      "neovim/nvim-lspconfig",
       { "williamboman/mason.nvim", run = ":MasonUpdate" },
-      { "williamboman/mason-lspconfig.nvim" },
+      "williamboman/mason-lspconfig.nvim",
 
       -- Autocompletion
-      { "hrsh7th/nvim-cmp" },
-      { "hrsh7th/cmp-nvim-lsp" },
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+
+      -- Loading status indicator
+      "j-hui/fidget.nvim"
     }
   }
 
