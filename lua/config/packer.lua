@@ -10,13 +10,18 @@ return require("packer").startup(function(use)
     config = function() require("zenburn").setup() end
   }
 
-  -- Fuzzy search
+  -- Telescope - Fuzzy finder
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.1",
     requires = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-live-grep-args.nvim"}
     }
+  }
+
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = {"kkharji/sqlite.lua"}
   }
 
   -- LSP configuration
