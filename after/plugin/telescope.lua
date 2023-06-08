@@ -2,13 +2,27 @@ local ts = require "telescope"
 local builtin = require "telescope.builtin"
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
+ts.setup {
+  extensions = {
+    repo = {
+      list = {
+        search_dirs = {
+          "~/src",
+          "~/.config/nvim",
+          "~/.config/zsh"
+        }
+      }
+    }
+  }
+}
+
 ts.load_extension("frecency")
 ts.load_extension("harpoon")
 ts.load_extension("live_grep_args")
 ts.load_extension("octo")
-ts.load_extension("project")
+ts.load_extension("repo")
 
-vim.keymap.set("n", "<leader>P", function() ts.extensions.project.project {} end)
+vim.keymap.set("n", "<leader>P", function() ts.extensions.repo.list {} end)
 
 vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 vim.keymap.set("n", "<leader><leader>pf", function() ts.extensions.frecency.frecency() end)

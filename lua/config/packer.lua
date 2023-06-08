@@ -34,7 +34,13 @@ return require("packer").startup(function(use)
     }
   }
 
-  use { "nvim-telescope/telescope-project.nvim", requires = "nvim-telescope/telescope.nvim" }
+  use {
+    "cljoly/telescope-repo.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim"
+    }
+  }
 
   -- LSP configuration
   use {
