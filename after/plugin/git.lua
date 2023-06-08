@@ -88,3 +88,17 @@ vim.keymap.set("n", "<leader>gpru", "<cmd>Git pull --rebase upstream " .. branch
 
 vim.keymap.set("n", "<leader>gl", "<cmd>Git log --graph --decorate --pretty=oneline --abbrev-commit<CR>")
 vim.keymap.set("n", "<leader>gL", "<cmd>Git log<CR>")
+
+-- GitHub Integration
+
+vim.cmd [[highlight OctoEditable ctermbg=none guibg=#3a3a3a]]
+
+require("octo").setup()
+
+vim.keymap.set("n", "<leader>ilo", ":Octo issue list<CR>", { desc = "list open GitHub issues" })
+vim.keymap.set("n", "<leader>ilc", ":Octo issue list states=CLOSED<CR>", { desc = "list closed GitHub issues" })
+vim.keymap.set("n", "<leader>ila", ":Octo issue list states=OPEN,CLOSED<CR>", { desc = "list all GitHub issues" })
+
+vim.keymap.set("n", "<leader>pro", ":Octo pr list<CR>", { desc = "list open GitHub pull requests" })
+vim.keymap.set("n", "<leader>prc", ":Octo pr list states=CLOSED<CR>", { desc = "list closed GitHub pull requests" })
+vim.keymap.set("n", "<leader>pra", ":Octo pr list states=OPEN,CLOSED<CR>", { desc = "list all GitHub pull requests" })

@@ -15,13 +15,22 @@ return require("packer").startup(function(use)
     "nvim-telescope/telescope.nvim", tag = "0.1.1",
     requires = {
       { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope-live-grep-args.nvim"}
+      { "nvim-telescope/telescope-live-grep-args.nvim" }
     }
   }
 
   use {
     "nvim-telescope/telescope-frecency.nvim",
     requires = {"kkharji/sqlite.lua"}
+  }
+
+  use {
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    }
   }
 
   -- LSP configuration

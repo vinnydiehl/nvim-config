@@ -5,6 +5,7 @@ local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 ts.load_extension("harpoon")
 ts.load_extension("live_grep_args")
 ts.load_extension("frecency")
+ts.load_extension("octo")
 
 vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
 vim.keymap.set("n", "<leader><leader>pf", function() ts.extensions.frecency.frecency() end)
