@@ -96,12 +96,18 @@ require("gitsigns").setup {
 -- Diffview
 
 require("diffview").setup {
+  enhanced_diff_hl = true,
   keymaps = {
     view = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } },
     file_panel = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } },
     file_history_panel = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } }
   }
 }
+
+vim.opt.fillchars:append { diff = "╱" }
+
+vim.cmd [[highlight DiffviewDiffAddAsDelete guibg=#cc9393]]
+vim.cmd [[highlight DiffviewDiffDelete guibg=#3a3a3a guifg=#303030]]
 
 vim.keymap.set("n", "<leader>gdd", ":DiffviewOpen<CR>", { desc = "open git diff browser" })
 vim.keymap.set("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "close git diff browser" })

@@ -2,7 +2,7 @@ vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.opt.fillchars:append { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
