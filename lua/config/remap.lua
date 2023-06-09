@@ -5,9 +5,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", ";", ":", { noremap = true })
 vim.keymap.set("v", ";", ":", { noremap = true })
 
--- ' to the old ; bind
-vim.keymap.set("n", "'", ";", { noremap = true })
-
 -- Backspace/Enter to place newline above/below the cursor
 vim.keymap.set("n", "<BS>", "O<Esc>j", { noremap = true })
 vim.keymap.set("n", "<Enter>", "o<Esc>k", { noremap = true })
