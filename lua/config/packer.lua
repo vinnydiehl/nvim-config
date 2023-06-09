@@ -53,6 +53,8 @@ return require("packer").startup(function(use)
     }
   }
 
+  use { "LinArcX/telescope-env.nvim", requires = "nvim-telescope/telescope.nvim" }
+
   -- LSP configuration
   use {
     "VonHeikemen/lsp-zero.nvim",

@@ -19,6 +19,7 @@ ts.setup {
   }
 }
 
+ts.load_extension("env")
 ts.load_extension("frecency")
 ts.load_extension("harpoon")
 ts.load_extension("heading")
@@ -42,3 +43,4 @@ vim.keymap.set("v", "<leader>pl", live_grep_args_shortcuts.grep_visual_selection
 vim.keymap.set("n", "<leader>plw", live_grep_args_shortcuts.grep_word_under_cursor)
 
 vim.keymap.set("n", "<leader>Th", ":Telescope heading<CR>")
+vim.keymap.set("n", "<leader>Te", ":Telescope env<CR>")
