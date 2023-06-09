@@ -14,7 +14,8 @@ ts.setup {
           "~/.config/nvim",
           "~/.config/zsh"
         }
-      }
+      },
+      settings = { auto_lcd = true }
     }
   }
 }
