@@ -1,7 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function(use)
-  -- Bootstrap packer
   use "wbthomason/packer.nvim"
 
   -- Colors
@@ -50,6 +49,14 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-telescope/telescope.nvim",
       "nvim-treesitter/nvim-treesitter"
+    }
+  }
+
+  use {
+    "nvim-telescope/telescope-packer.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "wbthomason/packer.nvim"
     }
   }
 
