@@ -60,8 +60,11 @@ return require("packer").startup(function(use)
     }
   }
 
+  -- TODO: This is a fork! Eyes on this PR:
+  -- https://github.com/paopaol/telescope-git-diffs.nvim/pull/3
   use {
-    "paopaol/telescope-git-diffs.nvim",
+    "vinnydiehl/telescope-git-diffs.nvim",
+    branch = "fix-range",
     requires = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
