@@ -25,8 +25,8 @@ vim.keymap.set("v", "<C-s>", '"hy:%s/<C-r>h//g<left><left>', { noremap = true })
 -- Paste in place of text object
 vim.keymap.set("n", "<Leader>pw", "viwp")
 vim.keymap.set("n", "<Leader>pW", "viWp")
-vim.keymap.set("n", '<Leader>p"', 'va"p')
-vim.keymap.set("n", "<Leader>p'", "va'p")
+vim.keymap.set("n", '<Leader>p"', 'vi"p')
+vim.keymap.set("n", "<Leader>p'", "vi'p")
 vim.keymap.set("n", "<Leader>p)", "va)p")
 vim.keymap.set("n", "<Leader>p]", "va]p")
 
