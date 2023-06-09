@@ -83,11 +83,13 @@ vim.keymap.set("n", "<leader>gp!o", "<cmd>Git push -f origin " .. branch_name() 
 vim.keymap.set("n", "<leader>gpu", "<cmd>Git push upstream " .. branch_name() .. "<CR>")
 vim.keymap.set("n", "<leader>gp!u", "<cmd>Git push -f upstream " .. branch_name() .. "<CR>")
 
-vim.keymap.set("n", "<leader>gpro", "<cmd>Git pull --rebase origin " .. branch_name() .. "<CR>")
-vim.keymap.set("n", "<leader>gpru", "<cmd>Git pull --rebase upstream " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gPo", "<cmd>Git pull origin " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gPu", "<cmd>Git pull upstream " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gPro", "<cmd>Git pull --rebase origin " .. branch_name() .. "<CR>")
+vim.keymap.set("n", "<leader>gPru", "<cmd>Git pull --rebase upstream " .. branch_name() .. "<CR>")
 
-vim.keymap.set("n", "<leader>gl", "<cmd>Git log --graph --decorate --pretty=oneline --abbrev-commit<CR>")
-vim.keymap.set("n", "<leader>gL", "<cmd>Git log<CR>")
+vim.keymap.set("n", "<leader>gl", "<cmd>Git log --all --graph --decorate --pretty=oneline --abbrev-commit<CR>")
+vim.keymap.set("n", "<leader>gL", "<cmd>Git log --all<CR>")
 
 -- GitHub Integration
 
