@@ -25,8 +25,11 @@ return require("packer").startup(function(use)
     }
   }
 
+  -- TODO: This is a fork! Eyes on this PR:
+  -- https://github.com/pwntester/octo.nvim/pull/406
   use {
-    "pwntester/octo.nvim",
+    "vinnydiehl/octo.nvim",
+    branch = "fix-state-highlight",
     requires = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
@@ -116,8 +119,11 @@ return require("packer").startup(function(use)
   }
 
   -- Cheat sheet
+  -- TODO: This is a fork! Eyes on this PR:
+  -- https://github.com/sudormrfbin/cheatsheet.nvim/pull/34
   use {
-    "sudormrfbin/cheatsheet.nvim",
+    "vinnydiehl/cheatsheet.nvim",
+    branch = "nerd-3.0",
     requires = {
       { "nvim-telescope/telescope.nvim" },
       { "nvim-lua/popup.nvim" },
