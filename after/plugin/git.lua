@@ -50,6 +50,8 @@ vim.keymap.set("n", "<leader>gL", "<cmd>Git log --all<CR>")
 
 -- Gitsigns
 
+vim.keymap.set("n", "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+
 require("gitsigns").setup {
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
