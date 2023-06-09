@@ -1,46 +1,3 @@
-require("gitsigns").setup {
-  on_attach = function(bufnr)
-    local gs = package.loaded.gitsigns
-
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
-
-    -- Navigation
-    map("n", "]h", function()
-      if vim.wo.diff then return "]h" end
-      vim.schedule(function() gs.next_hunk() end)
-      return "<Ignore>"
-    end, {expr=true})
-
-    map("n", "[h", function()
-      if vim.wo.diff then return "[h" end
-      vim.schedule(function() gs.prev_hunk() end)
-      return "<Ignore>"
-    end, {expr=true})
-
-    -- Actions
-    map("n", "<leader>hs", gs.stage_hunk)
-    map("n", "<leader>hu", gs.reset_hunk)
-    map("n", "<leader>hS", gs.stage_buffer)
-    map("n", "<leader>hU", gs.reset_buffer)
-    map("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
-    map("v", "<leader>hu", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)
-    map("n", "<leader>hp", gs.preview_hunk_inline)
-    map("n", "<leader>hP", gs.preview_hunk)
-    map("n", "<leader>hb", function() gs.blame_line { full = true } end)
-    map("n", "<leader>tb", gs.toggle_current_line_blame)
-    map("n", "<leader>hd", "<cmd>Gdiff<CR>")
-    map("n", "<leader>hD", function() gs.diffthis("~") end)
-    map("n", "<leader>td", gs.toggle_deleted)
-
-    -- Text object
-    map({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>")
-  end
-}
-
 -- Fugitive
 
 local function branch_name()
@@ -90,6 +47,65 @@ vim.keymap.set("n", "<leader>gPru", "<cmd>Git pull --rebase upstream " .. branch
 
 vim.keymap.set("n", "<leader>gl", "<cmd>Git log --all --graph --decorate --pretty=oneline --abbrev-commit<CR>")
 vim.keymap.set("n", "<leader>gL", "<cmd>Git log --all<CR>")
+
+-- Gitsigns
+
+require("gitsigns").setup {
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map("n", "]h", function()
+      if vim.wo.diff then return "]h" end
+      vim.schedule(function() gs.next_hunk() end)
+      return "<Ignore>"
+    end, {expr=true})
+
+    map("n", "[h", function()
+      if vim.wo.diff then return "[h" end
+      vim.schedule(function() gs.prev_hunk() end)
+      return "<Ignore>"
+    end, {expr=true})
+
+    -- Actions
+    map("n", "<leader>hs", gs.stage_hunk)
+    map("n", "<leader>hu", gs.reset_hunk)
+    map("n", "<leader>hS", gs.stage_buffer)
+    map("n", "<leader>hU", gs.reset_buffer)
+    map("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+    map("v", "<leader>hu", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end)
+    map("n", "<leader>hp", gs.preview_hunk_inline)
+    map("n", "<leader>hP", gs.preview_hunk)
+    map("n", "<leader>hb", function() gs.blame_line { full = true } end)
+    map("n", "<leader>tb", gs.toggle_current_line_blame)
+    map("n", "<leader>hd", "<cmd>Gdiff<CR>")
+    map("n", "<leader>hD", function() gs.diffthis("~") end)
+    map("n", "<leader>td", gs.toggle_deleted)
+
+    -- Text object
+    map({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+  end
+}
+
+-- Diffview
+
+require("diffview").setup {
+  keymaps = {
+    view = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } },
+    file_panel = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } },
+    file_history_panel = { { "n", "q", ":DiffviewClose<CR>",  { desc = "close git diff browser" } } }
+  }
+}
+
+vim.keymap.set("n", "<leader>gdd", ":DiffviewOpen<CR>", { desc = "open git diff browser" })
+vim.keymap.set("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "close git diff browser" })
+vim.keymap.set("n", "<leader>gdl", ":Telescope git_diffs diff_commits<CR>", { desc = "browse commit log and select a diff" })
 
 -- GitHub Integration
 

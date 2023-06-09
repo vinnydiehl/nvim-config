@@ -60,6 +60,15 @@ return require("packer").startup(function(use)
     }
   }
 
+  use {
+    "paopaol/telescope-git-diffs.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+    }
+  }
+
   use { "LinArcX/telescope-env.nvim", requires = "nvim-telescope/telescope.nvim" }
 
   -- LSP configuration

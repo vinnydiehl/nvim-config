@@ -22,6 +22,7 @@ ts.setup {
 
 ts.load_extension("env")
 ts.load_extension("frecency")
+ts.load_extension("git_diffs")
 ts.load_extension("harpoon")
 ts.load_extension("heading")
 ts.load_extension("live_grep_args")
