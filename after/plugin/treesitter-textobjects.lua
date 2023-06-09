@@ -17,10 +17,7 @@ require("nvim-treesitter.configs").setup {
         ["iC"] = { query = "@class.inner", desc = "Select inner part of a class region" },
 
         ["ab"] = { query = "@block.outer", desc = "Select outer part of a block" },
-        ["ib"] = { query = "@block.inner", desc = "Select inner part of a block" },
-
-        ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter" },
-        ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter" }
+        ["ib"] = { query = "@block.inner", desc = "Select inner part of a block" }
       },
 
       -- Default: charwise, "V" for linewise, "<C-v>" for blockwise

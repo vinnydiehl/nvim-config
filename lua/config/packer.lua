@@ -196,6 +196,7 @@ return require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-unimpaired"
   use { "Wansmer/treesj", config = function() require("treesj").setup() end }
+  use "wellle/targets.vim"
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   use "windwp/nvim-autopairs"
 end)
