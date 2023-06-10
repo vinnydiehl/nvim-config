@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({"FileType", "BufEnter", "FocusGained"}, {
 
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
-vim.keymap.set("n", "<leader>gi", "<cmd>Git init<CR>")
+vim.keymap.set("n", "<leader>gii", "<cmd>Git init<CR>")
 vim.keymap.set("n", "<leader>gib", "<cmd>Git init -b ")
 
 vim.keymap.set("n", "<leader>gS", "<cmd>Git stash<CR>")
@@ -128,3 +128,7 @@ vim.keymap.set("n", "<leader>ila", ":Octo issue list states=OPEN,CLOSED<CR>", { 
 vim.keymap.set("n", "<leader>pro", ":Octo pr list<CR>", { desc = "list open GitHub pull requests" })
 vim.keymap.set("n", "<leader>prc", ":Octo pr list states=CLOSED<CR>", { desc = "list closed GitHub pull requests" })
 vim.keymap.set("n", "<leader>pra", ":Octo pr list states=OPEN,CLOSED<CR>", { desc = "list all GitHub pull requests" })
+
+-- gitignore.nvim
+
+vim.keymap.set("n", "<leader>gig", "<cmd>Gitignore<CR>")
