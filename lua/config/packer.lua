@@ -6,7 +6,7 @@ return require("packer").startup(function(use)
   -- Colors
   use { "phha/zenburn.nvim", config = function() require("zenburn").setup() end }
 
-  -- Telescope - Fuzzy finder
+  -- Telescope
 
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.1",
@@ -15,6 +15,8 @@ return require("packer").startup(function(use)
       "nvim-telescope/telescope-live-grep-args.nvim"
     }
   }
+
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
   use {
     "nvim-telescope/telescope-frecency.nvim",

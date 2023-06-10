@@ -16,6 +16,7 @@ nightly builds are not available on your package manager.
 ### Dependencies
 
  * [fd](https://github.com/sharkdp/fd)
+ * [fzf](https://github.com/junegunn/fzf)
  * [glow](https://github.com/charmbracelet/glow)
  * [ripgrep](https://github.com/BurntSushi/ripgrep)
 
