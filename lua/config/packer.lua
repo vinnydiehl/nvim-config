@@ -89,7 +89,7 @@ return require("packer").startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
 
       -- Loading status indicator
-      "j-hui/fidget.nvim"
+      { "j-hui/fidget.nvim", tag = "legacy" }
     }
   }
 
