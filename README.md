@@ -1,5 +1,10 @@
 # My Neovim Config
 
+This is my personal Neovim configuration. I have it on here mostly to sync
+between my computers, but it is public if anyone is interested. This is very
+much intended to be an IDE-like setup useful across many languages, with a
+large spectrum of features built around a `<space>` leader key.
+
 ## Install
 
 This configuration is built upon [the version of Neovim in the Arch
@@ -48,3 +53,33 @@ are installed in the `lsp.ensure_installed()` call near the top of [this
 file](https://github.com/vinnydiehl/nvim-config/blob/main/after/plugin/lsp.lua)-
 if you would like to manage these manually, you can remove this entire function
 call and manage your LSPs with `:Mason`.
+
+## Caveats
+
+This is not a community project, but might be a good starting point for someone
+who would like a fully featured vim setup. Adjust to your preferences.
+
+The only system-level thing that is specific to my setup is that I keep my all
+of my projects in a `~/src` directory; this as well as `~/.config/nvim` and
+`~/.config/zsh` are indexed by the [project
+browser](https://github.com/nvim-telescope/telescope-project.nvim). You can
+set which directories are indexed by the project browser in [this
+file](https://github.com/vinnydiehl/nvim-config/blob/main/after/plugin/telescope.lua):
+
+```lua
+    repo = {
+      list = {
+        search_dirs = {
+          "~/src",
+          "~/.config/nvim",
+          "~/.config/zsh"
+        }
+      },
+      settings = { auto_lcd = true }
+    }
+```
+
+If you remove the entire `list` attribute, it will index your entire home
+directory. Leaving `auto_lcd` in place is recommended as it changes Neovim's
+working directory when you switch projects, allowing fuzzy finding to work as
+if you had launched from the project's root.
