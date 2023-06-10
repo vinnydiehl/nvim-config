@@ -140,11 +140,11 @@ return require("packer").startup(function(use)
   }
 
   -- Cheat sheet
-  -- TODO: This is a fork! Eyes on this PR:
+  -- TODO: This is a fork! Eyes on these PRs:
+  -- https://github.com/sudormrfbin/cheatsheet.nvim/pull/32
   -- https://github.com/sudormrfbin/cheatsheet.nvim/pull/34
   use {
-    "vinnydiehl/cheatsheet.nvim",
-    branch = "nerd-3.0",
+    "doctorfree/cheatsheet.nvim",
     requires = {
       { "nvim-telescope/telescope.nvim" },
       { "nvim-lua/popup.nvim" },
