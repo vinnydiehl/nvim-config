@@ -215,4 +215,12 @@ return require("packer").startup(function(use)
   use "wellle/targets.vim"
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   use "windwp/nvim-autopairs"
+
+  -- For my plugins, I use my local copies for development purposes. Unless you have this environment
+  -- variable set, this will pull from my GitHub repo instead.
+  if os.getenv("VINNYDIEHL_NVIM_PLUGIN_DEV") then
+    use "~/src/lua/mit.nvim"
+  else
+    use "vinnydiehl/mit.nvim"
+  end
 end)
