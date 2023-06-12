@@ -20,7 +20,8 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gii", "<cmd>Git init<CR>")
 vim.keymap.set("n", "<leader>gib", "<cmd>Git init -b ")
 
-vim.keymap.set("n", "<leader>gS", "<cmd>Git stash<CR>")
+vim.keymap.set("n", "<leader>gSS", "<cmd>Git stash<CR>")
+vim.keymap.set("n", "<leader>gSs", "<cmd>Git stash<CR>")
 vim.keymap.set("n", "<leader>gSp", "<cmd>Git stash pop<CR>")
 
 vim.keymap.set("n", "<leader>gco", "<cmd>Git branch<CR>")
