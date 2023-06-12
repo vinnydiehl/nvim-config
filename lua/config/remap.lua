@@ -57,6 +57,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 -- Keep search terms in the middle when using n/N
 vim.keymap.set("n", "n", "nzzzv", { noremap = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true })
+-- When you Ctrl+I/O, have the cursor in the middle of the screen after the jump
+vim.keymap.set("n", "<C-i>", "<C-i>zz", { noremap = true })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { noremap = true })
 
 -- Quickfix binds
 vim.keymap.set("n", "<C-Up>", "<Cmd>cnext<CR>zz")
