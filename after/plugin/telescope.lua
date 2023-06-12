@@ -34,6 +34,7 @@ ts.load_extension("repo")
 vim.keymap.set("n", "<leader>P", function() ts.extensions.repo.list {} end)
 
 vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+vim.keymap.set("n", "<leader>ph", ":Telescope find_files hidden=true<CR>")
 vim.keymap.set("n", "<leader><leader>pf", function() ts.extensions.frecency.frecency() end)
 vim.keymap.set("n", "<leader>pg", builtin.git_files, {})
 
