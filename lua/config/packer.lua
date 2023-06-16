@@ -26,11 +26,8 @@ return require("packer").startup(function(use)
     }
   }
 
-  -- TODO: This is a fork! Eyes on this PR:
-  -- https://github.com/pwntester/octo.nvim/pull/406
   use {
-    "vinnydiehl/octo.nvim",
-    branch = "fix-state-highlight",
+    "pwntester/octo.nvim",
     requires = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
