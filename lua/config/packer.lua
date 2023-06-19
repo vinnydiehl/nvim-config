@@ -174,6 +174,16 @@ return require("packer").startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
   }
 
+  -- Haskell
+  use {
+    "mrcjkb/haskell-tools.nvim",
+    branch = "1.x.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    }
+  }
+
   -- Debugger
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" } }
@@ -208,6 +218,7 @@ return require("packer").startup(function(use)
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"
   use "tpope/vim-unimpaired"
+  use "Vigemus/iron.nvim"
   use { "Wansmer/treesj", config = function() require("treesj").setup() end }
   use "wellle/targets.vim"
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"

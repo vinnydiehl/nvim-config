@@ -20,3 +20,9 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinEnter"
   pattern = "*",
   command = [[if &nu | set nornu | endif]]
 })
+
+-- No line numbers for the terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  command = [[setlocal nonu | setlocal nornu]]
+})

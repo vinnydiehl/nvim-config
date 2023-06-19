@@ -15,10 +15,17 @@ nightly builds are not available on your package manager.
 
 ### Dependencies
 
- * [fd](https://github.com/sharkdp/fd)
- * [fzf](https://github.com/junegunn/fzf)
- * [glow](https://github.com/charmbracelet/glow)
- * [ripgrep](https://github.com/BurntSushi/ripgrep)
+ * [`fd`](https://github.com/sharkdp/fd)
+ * [`fzf`](https://github.com/junegunn/fzf)
+ * [`glow`](https://github.com/charmbracelet/glow)
+ * [`ripgrep`](https://github.com/BurntSushi/ripgrep)
+
+Optional, for Haskell:
+
+ * [`haskell-language-server`](https://haskell-language-server.readthedocs.io/en/latest/installation.html)
+ * A local [`hoogle`](https://github.com/ndmitchell/hoogle/blob/master/docs/Install.md) installation
+ * [`fast-tags`](https://github.com/elaforge/fast-tags)
+ * [`haskell-debug-adapter`](https://github.com/phoityne/haskell-debug-adapter/)
 
 ### Setup
 
