@@ -69,9 +69,9 @@ call and manage your LSPs with `:Mason`.
 This is not a community project, but might be a good starting point for someone
 who would like a fully featured vim setup. Adjust to your preferences.
 
-The only system-level thing that is specific to my setup is that I keep my all
-of my projects in a `~/src` directory; this as well as `~/.config/nvim` and
-`~/.config/zsh` are indexed by the [project
+One thing that is specific to my setup is that I keep my all of my projects in
+a `~/src` directory; this as well as `~/.config/nvim` and `~/.config/zsh` are
+indexed by the [project
 browser](https://github.com/nvim-telescope/telescope-project.nvim). You can
 set which directories are indexed by the project browser in [this
 file](https://github.com/vinnydiehl/nvim-config/blob/main/after/plugin/telescope.lua):
@@ -93,3 +93,7 @@ If you remove the entire `list` attribute, it will index your entire home
 directory. Leaving `auto_lcd` in place is recommended as it changes Neovim's
 working directory when you switch projects, allowing fuzzy finding to work as
 if you had launched from the project's root.
+
+I also use [kitty](https://github.com/kovidgoyal/kitty) as my terminal
+emulator. This is only relevant when launching a C/C++ program in a separate
+window with `<leader>cR`.

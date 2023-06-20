@@ -224,6 +224,7 @@ return require("packer").startup(function(use)
   use "wellle/targets.vim"
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   use "windwp/nvim-autopairs"
+  use "xuhdev/SingleCompile"
 
   -- For my plugins, I use my local copies for development purposes. Unless you have this environment
   -- variable set, this will pull from my GitHub repo instead.
