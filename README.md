@@ -27,6 +27,8 @@ Optional, for Haskell:
  * [`fast-tags`](https://github.com/elaforge/fast-tags)
  * [`haskell-debug-adapter`](https://github.com/phoityne/haskell-debug-adapter/)
 
+For Rust test support, you will need to `cargo install cargo-nextest`.
+
 ### Setup
 
 Clone this repo into the config location:

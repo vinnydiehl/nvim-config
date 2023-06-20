@@ -71,20 +71,6 @@ vim.diagnostic.config({
 
 -- Language Server Setups
 
-lspconfig.lua_ls.setup {
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT" },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      },
-      telemetry = { enable = false }
-    }
-  }
-}
-
 lspconfig.emmet_ls.setup({
   capabilities = capabilities,
   filetypes = { "eruby", "html" },
@@ -98,3 +84,22 @@ lspconfig.emmet_ls.setup({
     },
   }
 })
+
+lspconfig.lua_ls.setup {
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+      telemetry = { enable = false }
+    }
+  }
+}
+
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities
+}

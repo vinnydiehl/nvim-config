@@ -102,7 +102,8 @@ return require("packer").startup(function(use)
       "antoinemadec/FixCursorHold.nvim",
 
       -- Handlers
-      "olimorris/neotest-rspec"
+      "olimorris/neotest-rspec",
+      "rouge8/neotest-rust"
     }
   }
 
