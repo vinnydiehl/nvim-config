@@ -49,8 +49,6 @@ vim.keymap.set("n", "<C-p>", '"_ddO', { noremap = true })
 -- Allow window commands in insert mode
 vim.keymap.set("i", "<C-w>", "<C-o><C-w>", { noremap = true })
 
--- Keep cursor in place when joining
-vim.keymap.set("n", "J", "mxJ`x", { noremap = true })
 -- Keep cursor in the middle when half-page jumping
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
