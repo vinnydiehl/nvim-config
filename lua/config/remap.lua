@@ -73,3 +73,7 @@ vim.keymap.set("x", "<leader>l", "<Esc>`>a](<C-r>*)<C-o>`<[<Esc>")
 
 -- Make escape work in terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+
+-- Ctrl+Backspace in insert mode to go back to the end of the last line erasing
+-- everything in between
+vim.keymap.set("i", "<C-Backspace>", "<C-o>d0<Backspace>")
