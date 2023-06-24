@@ -9,26 +9,6 @@ dap.adapters.cppdbg = {
   command = os.getenv("HOME") .. "/.config/nvim/dap/cpptools/extension/debugAdapters/bin/OpenDebugAD7"
 }
 
-dap.configurations.c = {
-  {
-    name = "Launch file",
-    type = "cppdbg",
-    request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
-    cwd = "${workspaceFolder}",
-    stopAtEntry = true,
-    setupCommands = {
-      {
-         text = "-enable-pretty-printing",
-         description =  "enable pretty printing",
-         ignoreFailures = false
-      }
-    }
-  }
-}
-
 dap.configurations.cpp = {
   {
     name = "Launch file",
@@ -48,6 +28,9 @@ dap.configurations.cpp = {
     }
   }
 }
+
+dap.configurations.c = dap.configurations.cpp;
+dap.configurations.rust = dap.configurations.cpp;
 
 vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "CursorLine", numhl = "Normal" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "ﳁ", texthl = "Function", linehl = "CursorLine", numhl = "Normal" })
