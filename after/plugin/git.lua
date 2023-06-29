@@ -36,10 +36,22 @@ vim.keymap.set("n", "<leader>gca", function()
   vim.cmd("Git commit")
 end)
 
+vim.keymap.set("n", "<leader>gt", function()
+  local tag = vim.fn.input("Enter tag: ")
+
+  if tag ~= "" then
+    vim.cmd(string.format("Git tag %s -am '%s'", tag, tag))
+    print("Tag created: " .. tag)
+  else
+    print("Tag cannot be empty.")
+  end
+end)
+
 vim.keymap.set("n", "<leader>gpo", function() vim.cmd("Git push origin " .. branch_name()) end)
 vim.keymap.set("n", "<leader>gp!o", function() vim.cmd("Git push -f origin " .. branch_name()) end)
 vim.keymap.set("n", "<leader>gpu", function() vim.cmd("Git push upstream " .. branch_name()) end)
 vim.keymap.set("n", "<leader>gp!u", function() vim.cmd("Git push -f upstream " .. branch_name()) end)
+vim.keymap.set("n", "<leader>gpt", "<cmd>Git push origin --tags<CR>")
 
 vim.keymap.set("n", "<leader>gPo", function() vim.cmd("Git pull origin " .. branch_name()) end)
 vim.keymap.set("n", "<leader>gPu", function() vim.cmd("Git pull upstream " .. branch_name()) end)
