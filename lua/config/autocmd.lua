@@ -26,3 +26,9 @@ vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
   command = [[setlocal nonu | setlocal nornu]]
 })
+
+-- https://github.com/vinnydiehl/crisp
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*.crisp",
+  command = [[setfiletype clojure]]
+})
