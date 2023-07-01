@@ -22,7 +22,13 @@ vim.keymap.set("n", "<C-s>", '"hyiw:%s/<C-r>h//g<left><left>', { noremap = true 
 -- In visual mode it searches and replaces the highlighted text
 vim.keymap.set("v", "<C-s>", '"hy:%s/<C-r>h//g<left><left>', { noremap = true })
 
--- Paste in place of text object
+-- Yank/paste in place of text object
+vim.keymap.set("n", "<Leader>yw", "viwy")
+vim.keymap.set("n", "<Leader>yW", "viWy")
+vim.keymap.set("n", '<Leader>y"', 'vi"y')
+vim.keymap.set("n", "<Leader>y'", "vi'y")
+vim.keymap.set("n", "<Leader>y)", "va)y")
+vim.keymap.set("n", "<Leader>y]", "va]y")
 vim.keymap.set("n", "<Leader>pw", "viwp")
 vim.keymap.set("n", "<Leader>pW", "viWp")
 vim.keymap.set("n", '<Leader>p"', 'vi"p')
