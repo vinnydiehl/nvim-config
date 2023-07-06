@@ -134,13 +134,20 @@ vim.cmd [[highlight OctoEditable ctermbg=none guibg=#3a3a3a]]
 
 require("octo").setup()
 
-vim.keymap.set("n", "<leader>ilo", ":Octo issue list<CR>", { desc = "list open GitHub issues" })
-vim.keymap.set("n", "<leader>ilc", ":Octo issue list states=CLOSED<CR>", { desc = "list closed GitHub issues" })
-vim.keymap.set("n", "<leader>ila", ":Octo issue list states=OPEN,CLOSED<CR>", { desc = "list all GitHub issues" })
+vim.keymap.set("n", "<leader>Gio", ":Octo issue list<CR>", { desc = "list open GitHub issues" })
+vim.keymap.set("n", "<leader>Gic", ":Octo issue list states=CLOSED<CR>", { desc = "list closed GitHub issues" })
+vim.keymap.set("n", "<leader>Gia", ":Octo issue list states=OPEN,CLOSED<CR>", { desc = "list all GitHub issues" })
 
-vim.keymap.set("n", "<leader>pro", ":Octo pr list<CR>", { desc = "list open GitHub pull requests" })
-vim.keymap.set("n", "<leader>prc", ":Octo pr list states=CLOSED<CR>", { desc = "list closed GitHub pull requests" })
-vim.keymap.set("n", "<leader>pra", ":Octo pr list states=OPEN,CLOSED<CR>", { desc = "list all GitHub pull requests" })
+vim.keymap.set("n", "<leader>Gpo", ":Octo pr list<CR>", { desc = "list open GitHub pull requests" })
+vim.keymap.set("n", "<leader>Gpc", ":Octo pr list states=CLOSED<CR>", { desc = "list closed GitHub pull requests" })
+vim.keymap.set("n", "<leader>Gpa", ":Octo pr list states=OPEN,CLOSED<CR>", { desc = "list all GitHub pull requests" })
+
+-- GitHub Gist
+
+require("gist").setup()
+
+vim.keymap.set("n", "<leader>Gg", ":GistCreateFromFile<CR>", { desc = "create Gist from file" })
+vim.keymap.set("v", "<leader>Gg", ":GistCreate<CR>", { desc = "create Gist from file" })
 
 -- gitignore.nvim
 

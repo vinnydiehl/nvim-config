@@ -153,6 +153,13 @@ return require("packer").startup(function(use)
     }
   }
 
+  -- GitHub Gist
+
+  use {
+    "rawnly/gist.nvim",
+    requires = { "samjwill/nvim-unception", setup = function() vim.g.unception_block_while_host_edits = true end }
+  }
+
   -- Leap
 
   use {
