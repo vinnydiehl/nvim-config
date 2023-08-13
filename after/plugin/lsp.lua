@@ -73,13 +73,15 @@ vim.diagnostic.config({
 
 lspconfig.emmet_ls.setup({
   capabilities = capabilities,
-  filetypes = { "eruby", "html" },
+  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less",
+                "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
   init_options = {
     html = {
       options = {
         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
         ["bem.enabled"] = true,
-        ["output.selfClosingStyle"] = "xhtml"
+        ["output.selfClosingStyle"] = "xhtml",
+        ["output.inlineBreak"] = 0
       },
     },
   }
