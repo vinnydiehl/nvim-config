@@ -79,9 +79,10 @@ lspconfig.emmet_ls.setup({
   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less",
                 "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
   init_options = {
+    -- For possible options:
+    -- https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
     html = {
       options = {
-        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
         ["bem.enabled"] = true,
         ["output.selfClosingStyle"] = "xhtml",
         ["output.inlineBreak"] = 1
@@ -89,7 +90,13 @@ lspconfig.emmet_ls.setup({
     },
     jsx = {
       options = {
-        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
+        ["bem.enabled"] = true,
+        ["output.selfClosingStyle"] = "xhtml",
+        ["output.inlineBreak"] = 1
+      }
+    },
+    tsx = {
+      options = {
         ["bem.enabled"] = true,
         ["output.selfClosingStyle"] = "xhtml",
         ["output.inlineBreak"] = 1
