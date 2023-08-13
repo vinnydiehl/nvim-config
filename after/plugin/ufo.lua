@@ -4,17 +4,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.opt.fillchars:append { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true
-}
-
-for _, ls in ipairs(require("lspconfig").util.available_servers()) do
-  require("lspconfig")[ls].setup({ capabilities = capabilities })
-end
-
 -- Number suffixes on folded lines
 require("ufo").setup({
   fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)

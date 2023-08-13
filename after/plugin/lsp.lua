@@ -8,6 +8,10 @@ local lspconfig = require "lspconfig"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
+}
 
 lsp.preset("recommended")
 
@@ -61,7 +65,6 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
 goto_preview.setup {}
 require("fidget").setup {}
 
@@ -81,9 +84,17 @@ lspconfig.emmet_ls.setup({
         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
         ["bem.enabled"] = true,
         ["output.selfClosingStyle"] = "xhtml",
-        ["output.inlineBreak"] = 0
-      },
+        ["output.inlineBreak"] = 1
+      }
     },
+    jsx = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L284
+        ["bem.enabled"] = true,
+        ["output.selfClosingStyle"] = "xhtml",
+        ["output.inlineBreak"] = 1
+      }
+    }
   }
 })
 
@@ -105,3 +116,5 @@ lspconfig.lua_ls.setup {
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities
 }
+
+lsp.setup()
