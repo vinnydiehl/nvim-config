@@ -29,7 +29,6 @@ lsp.ensure_installed({
   "solargraph",    -- Ruby
   "tsserver",      -- JavaScript/TypeScript
   "vimls",         -- Vimscript
-  "yamlls"         -- YAML
 })
 
 lsp.setup_nvim_cmp({ mapping = lsp.defaults.cmp_mappings({
