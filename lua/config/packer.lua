@@ -179,6 +179,13 @@ return require("packer").startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
   }
 
+  -- Text objects for camelCase/snake_case words
+
+  use {
+    "Julian/vim-textobj-variable-segment",
+    requires = "kana/vim-textobj-user",
+  }
+
   -- Haskell
   use {
     "mrcjkb/haskell-tools.nvim",
