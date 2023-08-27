@@ -227,6 +227,7 @@ return require("packer").startup(function(use)
   use { "nvim-treesitter/playground"}
   use "rmagatti/goto-preview"
   use "RRethy/nvim-treesitter-endwise"
+  use "sbdchd/neoformat"
   use "theprimeagen/harpoon"
   use "tpope/vim-fugitive"
   use "tpope/vim-unimpaired"
