@@ -71,6 +71,16 @@ return require("packer").startup(function(use)
   use { "LinArcX/telescope-env.nvim", requires = "nvim-telescope/telescope.nvim" }
   use { "wintermute-cell/gitignore.nvim", requires = { "nvim-telescope/telescope.nvim" } }
 
+  -- LeetCode
+
+  use {
+    "Dhanus3133/LeetBuddy.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    }
+  }
+
   -- LSP configuration
   use {
     "VonHeikemen/lsp-zero.nvim",
