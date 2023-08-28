@@ -51,3 +51,4 @@ vim.keymap.set("n", "<leader>plw", live_grep_args_shortcuts.grep_word_under_curs
 vim.keymap.set("n", "<leader>Te", ":Telescope env<CR>")
 vim.keymap.set("n", "<leader>Th", ":Telescope heading<CR>")
 vim.keymap.set("n", "<leader>Tp", ":Telescope packer<CR>")
+vim.keymap.set("n", "<leader>hh", ":Telescope help_tags<CR>")
