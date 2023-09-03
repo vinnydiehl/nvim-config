@@ -32,3 +32,9 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   pattern = "*.crisp",
   command = [[setfiletype clojure]]
 })
+
+-- mozconfig filetype
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+  pattern = "*mozconfig",
+  command = [[setfiletype config]]
+})
