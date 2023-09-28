@@ -190,7 +190,6 @@ return require("packer").startup(function(use)
   }
 
   -- Text objects for camelCase/snake_case words
-
   use {
     "Julian/vim-textobj-variable-segment",
     requires = "kana/vim-textobj-user",
@@ -204,6 +203,12 @@ return require("packer").startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     }
+  }
+
+  -- Indentation marker lines
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    tag = "v2.20.8",
   }
 
   -- Debugger
@@ -228,7 +233,6 @@ return require("packer").startup(function(use)
   use "haya14busa/is.vim"
   use { "kylechui/nvim-surround", tag = "*", config = function() require("nvim-surround").setup() end }
   use "lewis6991/gitsigns.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
   use "mbbill/undotree"
   use { "numToStr/Comment.nvim", config = function() require("Comment").setup() end }
   use "nvim-tree/nvim-tree.lua"
