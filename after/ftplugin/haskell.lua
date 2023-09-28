@@ -34,6 +34,3 @@ vim.keymap.set("n", "<leader>lq", ht.repl.quit, opts)
 
 -- Detect nvim-dap launch configurations
 ht.dap.discover_configurations(bufnr)
-
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
