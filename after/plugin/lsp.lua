@@ -104,6 +104,8 @@ lspconfig.emmet_ls.setup({
   }
 })
 
+lspconfig.jdtls.setup {}
+
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
   settings = {
