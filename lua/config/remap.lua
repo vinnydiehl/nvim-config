@@ -2,8 +2,7 @@
 vim.g.mapleader = " "
 
 -- ; will work like : for commands
-vim.keymap.set("n", ";", ":", { noremap = true })
-vim.keymap.set("v", ";", ":", { noremap = true })
+vim.keymap.set({ "n", "v" }, ";", ":", { noremap = true })
 
 -- Backspace/Enter to place newline above/below the cursor
 vim.keymap.set("n", "<BS>", "O<Esc>j", { noremap = true })
@@ -23,31 +22,31 @@ vim.keymap.set("n", "<C-s>", '"hyiw:%s/<C-r>h//g<left><left>', { noremap = true 
 vim.keymap.set("v", "<C-s>", '"hy:%s/<C-r>h//g<left><left>', { noremap = true })
 
 -- Yank/paste in place of text object
-vim.keymap.set("n", "<Leader>yw", "viwy")
-vim.keymap.set("n", "<Leader>yW", "viWy")
-vim.keymap.set("n", '<Leader>y"', 'vi"y')
-vim.keymap.set("n", "<Leader>y'", "vi'y")
-vim.keymap.set("n", "<Leader>y)", "va)y")
-vim.keymap.set("n", "<Leader>y]", "va]y")
-vim.keymap.set("n", "<Leader>pw", "viwp")
-vim.keymap.set("n", "<Leader>pW", "viWp")
-vim.keymap.set("n", '<Leader>p"', 'vi"p')
-vim.keymap.set("n", "<Leader>p'", "vi'p")
-vim.keymap.set("n", "<Leader>p)", "va)p")
-vim.keymap.set("n", "<Leader>p]", "va]p")
+vim.keymap.set("n", "<leader>yw", "yiw")
+vim.keymap.set("n", "<leader>yW", "yiW")
+vim.keymap.set("n", '<leader>y"', 'yi"')
+vim.keymap.set("n", "<leader>y'", "yi'")
+vim.keymap.set("n", "<leader>y)", "ya)")
+vim.keymap.set("n", "<leader>y]", "ya]")
+vim.keymap.set("n", "<leader>pw", "viwp")
+vim.keymap.set("n", "<leader>pW", "viWp")
+vim.keymap.set("n", '<leader>p"', 'vi"p')
+vim.keymap.set("n", "<leader>p'", "vi'p")
+vim.keymap.set("n", "<leader>p)", "va)p")
+vim.keymap.set("n", "<leader>p]", "va]p")
 
 -- Paste without replacing your buffer
-vim.keymap.set("x", "<Leader>px", '"_dP')
+vim.keymap.set("x", "<leader>px", '"_dP')
 
 -- System clipboard copy/pasting
-vim.keymap.set("v", "<Leader>yy", '"+y')
-vim.keymap.set({ "n", "v" }, "<Leader>pp", '"+p')
+vim.keymap.set("v", "<leader>yy", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>pp", '"+p')
 -- Primary selection
-vim.keymap.set("v", "<Leader>y1", '"*y')
-vim.keymap.set({ "n", "v" }, "<Leader>p1", '"*p')
+vim.keymap.set("v", "<leader>y1", '"*y')
+vim.keymap.set({ "n", "v" }, "<leader>p1", '"*p')
 -- Whole file
-vim.keymap.set("n", "<Leader>ya", "mxggVG\"+y'x")
-vim.keymap.set("n", "<Leader>pa", 'ggVG"+p')
+vim.keymap.set("n", "<leader>ya", ":%y+<cr>")
+vim.keymap.set("n", "<leader>pa", 'ggVG"+p')
 
 -- If you have the cursor on an empty line, enter insert w/ proper whitespace
 vim.keymap.set("n", "<C-p>", '"_ddO', { noremap = true })
@@ -72,7 +71,7 @@ vim.keymap.set("n", "<M-Up>", "<Cmd>lnext<CR>zz")
 vim.keymap.set("n", "<M-Down>", "<Cmd>lprev<CR>zz")
 
 -- Make current file executable
-vim.keymap.set("n", "<Leader>x", "<Cmd>!chmod +x %<CR>")
+vim.keymap.set("n", "<leader>x", "<Cmd>!chmod +x %<CR>")
 
 -- Paste markdown link around selected text
 vim.keymap.set("x", "<leader>l", "<Esc>`>a](<C-r>*)<C-o>`<[<Esc>")
