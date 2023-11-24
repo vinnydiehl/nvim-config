@@ -224,7 +224,10 @@ return require("packer").startup(function(use)
   --       repo when it gets merged: https://github.com/simrat39/symbols-outline.nvim/pull/225
   use "anstadnik/symbols-outline.nvim"
 
-  use { "andrewferrier/debugprint.nvim", config = function() require("debugprint").setup {} end }
+  -- TODO: This is a fork pending this PR getting merged:
+  -- https://github.com/andrewferrier/debugprint.nvim/pull/69 (giggity)
+  use { "vinnydiehl/debugprint.nvim", config = function() require("debugprint").setup {} end }
+
   use "chrisbra/unicode.vim"
   use "fabi1cazenave/suckless.vim"
   use "folke/neodev.nvim"
