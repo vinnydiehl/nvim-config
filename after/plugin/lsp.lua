@@ -27,7 +27,7 @@ lsp.ensure_installed({
   "lua_ls",        -- Lua
   "rust_analyzer", -- Rust
   "solargraph",    -- Ruby
-  "tsserver",      -- JavaScript/TypeScript
+  "ts_ls",         -- JavaScript/TypeScript
   "vimls",         -- Vimscript
 })
 
