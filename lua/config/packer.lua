@@ -106,6 +106,7 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/nvim-nio",
       "antoinemadec/FixCursorHold.nvim",
 
       -- Handlers
